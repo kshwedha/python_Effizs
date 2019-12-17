@@ -1,0 +1,22 @@
+you should be the root user.
+1-->edit the sorces.list file in etc/apt i.e.,
+2-->paste the following into that;
+3-->save it and update the sys
+4-->install the pip
+
+
+1-->vi etc/apt/sources.list
+
+2-->
+deb http://deb.debian.org/debian stretch main
+deb-src http://deb.debian.org/debian stretch main
+
+deb http://deb.debian.org/debian-security/ stretch/updates main
+deb-src http://deb.debian.org/debian-security/ stretch/updates main
+
+deb http://deb.debian.org/debian stretch-updates main
+deb-src http://deb.debian.org/debian stretch-updates main
+
+3-->apt get update
+
+4-->apt install pip
