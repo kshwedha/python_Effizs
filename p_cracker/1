@@ -1,0 +1,21 @@
+def char_gen(length,index):
+    index+=1
+    length=length-1
+    if(length+1)>=2:
+        for i in range(93):
+            string[index-1]=chr(i+33)
+            char_gen(length,index)
+    elif (length+1)== 1:
+        for i in range(93):
+            string[index-1]=chr(i+33)
+            print(string+"\n")
+
+
+index=0
+#try:
+length=int(input("enter the word length\n")
+#except:
+#print("only integer format is  valid\n")
+char_gen(length=length,index=index)
+
+

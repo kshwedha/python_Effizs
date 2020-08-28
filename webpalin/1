@@ -1,0 +1,26 @@
+import tkinter
+from tkinter import *
+
+main=tkinter.Tk(screenName=None, baseName=None, className='Tk', useTk=1)
+
+main.title('sample window(main)')
+
+canvas= Canvas(main, width=40, height=60)
+canvas.pack()
+canvas_height=20
+canvas_width=200
+y=int(canvas_height/2)
+canvas.create_line(0, y, canvas_width, y,fill='black', width=3)
+
+var1 = IntVar() 
+Checkbutton(main, text='male', variable=var1).grid(row=0, sticky=W) 
+var2 = IntVar() 
+Checkbutton(main, text='female', variable=var2).grid(row=1, sticky=W) 
+
+button=tkinter.Button(main, text='Stop',height=5, width=25,activebackground='black',activeforeground='green',command=main.destroy)
+#font and image are 2 more attributes
+button.pack()
+
+
+main.mainloop()
+

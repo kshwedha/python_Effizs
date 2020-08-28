@@ -1,0 +1,3 @@
+print "art price: %5d but discount gone: %8.2f" %(453, 58.977))
+print "art price: {0:5d} but discount gone: {1:8.2f}" .format(453, 58.9876))
+print "hello {0}, this is tye price of python {1:8.2f}".format("adam",765.0987))
