@@ -1,5 +1,3 @@
 # python_Effizs
-scripts-py beyond now.....
+scripts-py that help to get and know about python interaction ability with other applications and more.....
 [*] processing.........///
-for reference you can find the link below.,
-https://drive.google.com/open?id=1wnukDthz6_siQVq9lLg1f-LuPVKYXWEc
