@@ -1,0 +1,72 @@
+def get_indent2(line):
+    """
+    When the second indentation count will be odd instead of even (ex, 7, 11, 15)
+    """
+    a = line.split(" ")
+    value = a.pop()
+    if not a:
+        return 0, value
+    len_a = len(a)
+    if len_a > 4:
+        len_a = len_a+1
+    return ((len_a-len_a%4)//4)+1, value
+
+def get_indent(line):
+    a = line.split(" ")
+    value = a.pop()
+    if not a:
+        return 0, value
+    len_a = len(a)
+    return ((len_a-len_a%4)//4)+1, value
+
+def create_dir(path):
+    os.makedirs(path, exist_ok=True)
+    print(f"Directory created successfully: {path}")
+
+def create_file(path):
+    try:
+        with open(path, 'x') as f:
+            pass
+        print(f"File created successfully: {path}")
+    except FileExistsError:
+        print(f"File already exists: {path}")
+
+def create_structure(tree):
+    cur_indent = 0
+    lines = tree.strip().split("\n")
+    path = list()
+    for line in lines:
+        indent, value = get_indent(line)
+        print(cur_indent, indent, value)
+        if indent <= cur_indent:
+            for _ in range(cur_indent-indent):
+                cur_indent-=1
+                path.pop()
+        if value[-1] == "/":
+            create_dir(os.path.join(*path, value))
+            path.append(value)
+            print(f"path {path}")
+            cur_indent +=1
+        else:
+            create_file(os.path.join(*path, value))
+
+y = """
+voice-ai-system/
+├── README.md
+├── docker-compose.yml
+├── docker-compose.dev.yml
+├── .env.example
+├── .gitignore
+├── Makefile
+├── requirements.txt
+├── scripts/
+│   ├── setup.sh
+│   ├── start.sh
+│   └── test.sh
+├── docs/
+│   ├── API.md
+│   ├── DEPLOYMENT.md
+│   └── ARCHITECTURE.md
+"""
+
+create_structure(x)
